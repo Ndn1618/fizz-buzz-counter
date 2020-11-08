@@ -32,6 +32,7 @@ elNumberForm.addEventListener('submit', function (evt) {
 
   if (isNaN(number) || number < 0) {
     alert('Qoidalarga rioya qiling: sonlarni harflarda yozmang hamda manfiy son kiritmang!');
+    elNumberInput.value = '';
   } else {
     for (var i = 1; i <= number; i++) {
       if (i % 3 === 0 && i % 5 === 0) {
@@ -56,5 +57,9 @@ elNumberForm.addEventListener('submit', function (evt) {
     elThreeFiveDividingsResult.textContent = threeAndFiveDividings.join(', ');
     elThreeFiveDividingsHeading.appendChild(elThreeFiveDividingsResult);
     elThreeFiveDividingsNumber.textContent = threeAndFiveDividings.length;
+
+    elNumberInput.value = number;
   }
+
+  elNumberInput.focus();
 });
